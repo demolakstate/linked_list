@@ -13,16 +13,16 @@ class ListNode_2 {
 public static void main(String[] args) {
 
 
-	ListNode head = new ListNode(1);
-	ListNode current = new ListNode(2);
+	ListNode head = new ListNode(9);
+	ListNode current = new ListNode(7);
 	 head.next = current;
 
 	
-	ListNode a = new ListNode(3);
+	ListNode a = new ListNode(21);
 	current.next = a;
-	ListNode b = new ListNode(4);
+	ListNode b = new ListNode(50);
 	a.next = b;
-	ListNode c = new ListNode(5);
+	ListNode c = new ListNode(78);
 	b.next = c;
 	
 
@@ -30,11 +30,15 @@ public static void main(String[] args) {
 
 	ListNode_2 test = new ListNode_2();
 
-	System.out.println("Length " + test.getLength(head));
+	// System.out.println("Length " + test.getLength(head));
 
-	ListNode t = test.removeNthFromEnd(head, 4);
+	System.out.print("Input Linked List ");
 
-	System.out.println("Length after deletion " + test.getLength(t));
+	ListNode t = test.removeNthFromEnd(head, 1);
+	System.out.print("\nLinked list after deletion ");
+
+	//System.out.println("Length after deletion " + test.getLength(t));
+	test.getLength(t);
 	
 	
 	} // end method main
@@ -75,9 +79,11 @@ public static void main(String[] args) {
  public int getLength(ListNode head) {
 	int i = 1; // counter
 
-	while(head.next != null ){
+	System.out.print(head.val + "-->");
+	while(head.next != null ){	
 	i++;
 	head = head.next;
+	System.out.print(head.val + "-->");
 	}
 	return i;
 
